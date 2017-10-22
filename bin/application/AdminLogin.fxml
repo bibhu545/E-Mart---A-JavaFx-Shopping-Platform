@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane focusTraversable="true" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminControls">
+   <children>
+      <TextField fx:id="username" layoutX="172.0" layoutY="92.0" promptText="User Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="password" layoutX="172.0" layoutY="160.0" promptText="Password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="back" layoutX="172.0" layoutY="211.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="52.0" style="-fx-border-color: green;" text="Back">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="login" defaultButton="true" layoutX="285.0" layoutY="211.0" mnemonicParsing="false" onAction="#adminLogin" prefHeight="30.0" prefWidth="62.0" style="-fx-border-color: blue;" text="Login">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="172.0" layoutY="14.0" prefHeight="43.0" prefWidth="175.0" text="Admin Login" textFill="#0429ff">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="error" alignment="CENTER" layoutX="172.0" layoutY="251.0" prefHeight="35.0" prefWidth="175.0" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="172.0" layoutY="65.0" text="User Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="172.0" layoutY="133.0" text="Password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

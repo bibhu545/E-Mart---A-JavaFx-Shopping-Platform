@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminArea">
+  <tabs>
+    <Tab text="User Management">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);" stylesheets="@application.css">
+               <children>
+                  <HBox layoutX="121.0" layoutY="136.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#categoryMenu" prefHeight="100.0" prefWidth="109.0" style="-fx-border-color: blue; -fx-border-radius: 50;" text="Category Details">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#productMenu" prefHeight="100.0" prefWidth="111.0" style="-fx-border-color: blue; -fx-border-radius: 50;" text="Product Details">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="109.0" style="-fx-border-color: blue; -fx-border-radius: 50;" text="See Statistics">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Logout">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);">
+               <children>
+                  <Button layoutX="140.0" layoutY="134.0" mnemonicParsing="false" onAction="#backToMenu" text="Back To Main ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="309.0" layoutY="134.0" mnemonicParsing="false" onAction="#exit" text="Logout And Exit">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

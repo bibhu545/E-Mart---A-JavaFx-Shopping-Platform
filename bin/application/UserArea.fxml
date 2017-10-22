@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserArea">
+   <children>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="All Products">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table" layoutX="174.0" layoutY="30.0" prefHeight="341.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                          <columns>
+                            <TableColumn fx:id="product_id" prefWidth="66.0" text="Product Id" />
+                            <TableColumn fx:id="product_name" prefWidth="103.0" text="Name" />
+                              <TableColumn fx:id="actual_price" prefWidth="92.0" text="Actual Price" />
+                              <TableColumn fx:id="show_price" prefWidth="82.0" text="Show Price" />
+                              <TableColumn fx:id="product_category" prefWidth="75.0" text="Category" />
+                              <TableColumn fx:id="product_qty" prefWidth="89.0" text="Availability" />
+                              <TableColumn fx:id="product_status" prefWidth="79.0" text="Offer Status" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="499.0" layoutY="1.0" mnemonicParsing="false" onAction="#reloadProducts" style="-fx-border-color: red;" text="Reload Table" textFill="RED" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Buy Product">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);">
+                     <children>
+                        <Label layoutX="100.0" layoutY="26.0" text="Search By id" textFill="#4400ff">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="135.0" layoutY="137.0" text="Name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="135.0" layoutY="168.0" text="Actual Price">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="135.0" layoutY="198.0" text="Show Price">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="135.0" layoutY="229.0" text="Category">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="358.0" layoutY="26.0" text="Search By name" textFill="#4400ff">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="error" alignment="CENTER" layoutX="154.0" layoutY="303.0" prefHeight="48.0" prefWidth="293.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="456.0" layoutY="312.0" mnemonicParsing="false" onAction="#buyNow" style="-fx-border-color: green;" text="Buy Now" textFill="#086105">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="searchid" layoutX="99.0" layoutY="58.0" style="-fx-border-color: blue;" />
+                        <TextField fx:id="searchname" layoutX="358.0" layoutY="58.0" style="-fx-border-color: blue;" />
+                        <Label layoutX="135.0" layoutY="110.0" text="Product Id">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="135.0" layoutY="258.0" text="Availability">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="searchproductid" layoutX="410.0" layoutY="112.0" />
+                        <Label fx:id="productname" layoutX="410.0" layoutY="137.0" />
+                        <Label fx:id="productcat" layoutX="410.0" layoutY="229.0" />
+                        <Label fx:id="showprice" layoutX="410.0" layoutY="198.0" />
+                        <Label fx:id="actualprice" layoutX="410.0" layoutY="168.0" />
+                        <Label fx:id="productqty" layoutX="410.0" layoutY="258.0" />
+                        <Button layoutX="255.0" layoutY="59.0" mnemonicParsing="false" onAction="#searchById" style="-fx-border-color: blue;" text="OK" textFill="#1500ff">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="513.0" layoutY="59.0" mnemonicParsing="false" onAction="#searchByName" style="-fx-border-color: blue;" text="OK" textFill="#1500ff">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="View/Edit Profile">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);">
+                     <children>
+                        <Label layoutX="260.0" layoutY="44.0" text="My Profile">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="135.0" layoutY="198.0" text="Password">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="135.0" layoutY="162.0" text="Email">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="135.0" layoutY="92.0" text="User Id">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="134.0" layoutY="127.0" text="Name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="userid" disable="true" layoutX="341.0" layoutY="87.0" prefHeight="29.0" prefWidth="163.0" style="-fx-border-color: blue; -fx-background-color: white;" />
+                        <TextField fx:id="username" disable="true" layoutX="341.0" layoutY="121.0" prefHeight="31.0" prefWidth="163.0" style="-fx-border-color: blue; -fx-background-color: white;" />
+                        <TextField fx:id="useremail" disable="true" layoutX="341.0" layoutY="156.0" prefHeight="29.0" prefWidth="163.0" style="-fx-border-color: blue; -fx-background-color: white;" />
+                        <TextField fx:id="userpass" disable="true" layoutX="341.0" layoutY="193.0" prefHeight="29.0" prefWidth="163.0" style="-fx-border-color: blue; -fx-background-color: white;" />
+                        <Button layoutX="403.0" layoutY="251.0" mnemonicParsing="false" onAction="#updateProfile" style="-fx-border-color: green;" text="Update Now" textFill="#008300">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="profilemessage" alignment="CENTER" layoutX="115.0" layoutY="309.0" prefHeight="41.0" prefWidth="370.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="135.0" layoutY="251.0" mnemonicParsing="false" onAction="#editProfile" style="-fx-border-color: blue;" text="Edit Profile" textFill="#1a05ff">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Purchase History">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);">
+                     <children>
+                        <TableView fx:id="bus_table" layoutY="27.0" prefHeight="344.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+                          <columns>
+                            <TableColumn fx:id="business_id" prefWidth="75.0" text="Trans. Id" />
+                            <TableColumn fx:id="product_name_bus" prefWidth="121.0" text="Product Name" />
+                              <TableColumn fx:id="purchase_date" prefWidth="133.0" text="Puchase Date" />
+                              <TableColumn fx:id="product_status_bus" prefWidth="133.0" text="Present Status" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="505.0" layoutY="1.0" mnemonicParsing="false" onAction="#reloadProducts" style="-fx-border-color: red;" text="Reload Table" textFill="RED" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Logout">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);">
+                     <children>
+                        <Button layoutX="155.0" layoutY="147.0" mnemonicParsing="false" onAction="#logout" style="-fx-border-color: green;" text="Logout" textFill="#2a801b">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="368.0" layoutY="147.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="72.0" style="-fx-border-color: red;" text="Exit" textFill="RED">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="152.0" layoutY="44.0" prefHeight="53.0" prefWidth="294.0" text="Thank You" textFill="#2b00ff">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="153.0" layoutY="238.0" prefHeight="53.0" prefWidth="294.0" text="See you soon" textFill="#2b00ff">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProductMenu">
+  <tabs>
+    <Tab text="All Products">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="table" layoutX="200.0" layoutY="26.0" prefHeight="345.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+                    <columns>
+                      <TableColumn fx:id="product_id" prefWidth="75.0" text="Product Id" />
+                      <TableColumn fx:id="product_name" prefWidth="136.0" text="Name" />
+                        <TableColumn fx:id="actual_price" prefWidth="73.0" text="Actual Price" />
+                        <TableColumn fx:id="show_price" prefWidth="79.0" text="Show Price" />
+                        <TableColumn fx:id="product_category" prefWidth="92.0" text="Category" />
+                        <TableColumn fx:id="product_qty" prefWidth="64.0" text="Quantity" />
+                        <TableColumn fx:id="product_status" minWidth="9.0" prefWidth="79.0" text="Status" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="494.0" mnemonicParsing="false" onAction="#reloadTable" prefHeight="27.0" prefWidth="105.0" style="-fx-border-color: red;" text="Reload Table" textFill="#1e6825" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Search Product">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);">
+               <children>
+                  <TextField fx:id="searchid" layoutX="95.0" layoutY="52.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="95.0" layoutY="24.0" text="Search By id" textFill="#18019e">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="320.0" layoutY="24.0" text="Search By Name" textFill="#18019e">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="236.0" layoutY="52.0" mnemonicParsing="false" onAction="#searchById" style="-fx-border-color: blue;" text="ok">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="470.0" layoutY="53.0" mnemonicParsing="false" onAction="#searchByName" style="-fx-border-color: blue;" text="ok">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="searchname" layoutX="320.0" layoutY="53.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="108.0" layoutY="124.0" text="Name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="108.0" layoutY="157.0" lineSpacing="10.0" text="Actual Price">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="108.0" layoutY="262.0" lineSpacing="10.0" text="Category">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="108.0" layoutY="224.0" lineSpacing="10.0" text="Quantity">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="108.0" layoutY="189.0" lineSpacing="10.0" text="Show Price">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="107.0" layoutY="296.0" lineSpacing="10.0" text="Status">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="actualprice" alignment="CENTER" layoutX="367.0" layoutY="157.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="showprice" alignment="CENTER" layoutX="367.0" layoutY="189.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="productqty" alignment="CENTER" layoutX="367.0" layoutY="224.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="productcat" alignment="CENTER" layoutX="367.0" layoutY="262.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="productstatus" alignment="CENTER" layoutX="367.0" layoutY="296.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="productname" alignment="CENTER" layoutX="367.0" layoutY="124.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="error" alignment="CENTER" layoutX="246.0" layoutY="329.0" prefHeight="28.0" prefWidth="108.0" />
+                  <Label layoutX="107.0" layoutY="98.0" text="Product Id">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="searchproductid" layoutX="366.0" layoutY="98.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="450.0" layoutY="314.0" mnemonicParsing="false" onAction="#deleteProduct" style="-fx-border-color: red;" text="Delete Product">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Edit Product">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);">
+               <children>
+                  <Label layoutX="72.0" layoutY="25.0" text="Search By id" textFill="#0d0472">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="editsearchid" layoutX="72.0" layoutY="55.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="136.0" layoutY="139.0" text="Name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="136.0" layoutY="174.0" lineSpacing="10.0" text="Actual Price">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="136.0" layoutY="209.0" lineSpacing="10.0" text="Show Price">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="136.0" layoutY="244.0" lineSpacing="10.0" text="Quantity">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="136.0" layoutY="279.0" lineSpacing="10.0" text="Category">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="220.0" layoutY="52.0" mnemonicParsing="false" onAction="#editProductById" style="-fx-border-color: blue;" text="ok">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="334.0" layoutY="25.0" text="Search By Name" textFill="#0d0472">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="editsearchname" layoutX="334.0" layoutY="55.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="editproductname" layoutX="334.0" layoutY="134.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="editactualprice" layoutX="334.0" layoutY="169.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="editshowprice" layoutX="334.0" layoutY="204.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="editproductqty" layoutX="334.0" layoutY="239.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="editproductcat" layoutX="334.0" layoutY="274.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <Button layoutX="479.0" layoutY="52.0" mnemonicParsing="false" onAction="#editProductByName" style="-fx-border-color: blue;" text="ok">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="editerror" alignment="CENTER" layoutX="133.0" layoutY="298.0" prefHeight="34.0" prefWidth="334.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="428.0" layoutY="315.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="34.0" prefWidth="102.0" style="-fx-border-color: green;" text="Update" />
+                  <Label layoutX="136.0" layoutY="107.0" text="Product Id">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="productid" layoutX="336.0" layoutY="99.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Add Products">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);">
+               <children>
+                  <Label alignment="CENTER" layoutX="133.0" layoutY="78.0" text="Name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="134.0" layoutY="151.0" lineSpacing="10.0" text="Show Price">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="134.0" layoutY="114.0" lineSpacing="10.0" text="Actual Price">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="132.0" layoutY="191.0" lineSpacing="10.0" text="Quantity">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="131.0" layoutY="229.0" lineSpacing="10.0" text="Category id">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="getname" layoutX="351.0" layoutY="73.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="getactualprice" layoutX="351.0" layoutY="109.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="getshowprice" layoutX="351.0" layoutY="146.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="getqty" layoutX="351.0" layoutY="186.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <TextField fx:id="getcategory" layoutX="351.0" layoutY="224.0" prefHeight="30.0" prefWidth="131.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </TextField>
+                  <Label fx:id="insertmessage" alignment="CENTER" layoutX="133.0" layoutY="323.0" prefHeight="34.0" prefWidth="346.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="249.0" layoutY="273.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="34.0" prefWidth="102.0" style="-fx-border-color: green;" text="Add Now" />
+                  <Label fx:id="productid1" layoutX="93.0" layoutY="219.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="categories" alignment="CENTER" layoutX="15.0" layoutY="21.0" prefHeight="34.0" prefWidth="572.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Back">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(lightgrey,white,lightgrey);">
+               <children>
+                  <Button layoutX="102.0" layoutY="166.0" mnemonicParsing="false" onAction="#backToMenu" style="-fx-border-color: blue;" text="Back to Main Menu" textFill="#1500ff">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="347.0" layoutY="166.0" mnemonicParsing="false" onAction="#exit" style="-fx-border-color: red;" text="Logout And Exit" textFill="RED">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
